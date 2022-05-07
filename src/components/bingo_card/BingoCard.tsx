@@ -4,22 +4,22 @@ import "./BingoCard.css";
 import CardNum from "./card_number/CardNum";
 
 // B列、I列、N列、G列、O列の配列（縦列）
-const col_B = [];
-const col_I = [];
-const col_N = [];
-const col_G = [];
-const col_O = [];
+const col_B: Array<number> = [];
+const col_I: Array<number> = [];
+const col_N: Array<number | string> = [];
+const col_G: Array<number> = [];
+const col_O: Array<number> = [];
 
 const BingoCard = ({ cardNumArray, numbersArr }) => {
   const data = useContext(DataContext);
 
-  const [colB, setColB] = useState([]);
-  const [colI, setColI] = useState([]);
-  const [colN, setColN] = useState([]);
-  const [colG, setColG] = useState([]);
-  const [colO, setColO] = useState([]);
+  const [colB, setColB] = useState<Array<number>>([]);
+  const [colI, setColI] = useState<Array<number>>([]);
+  const [colN, setColN] = useState<Array<number | string>>([]);
+  const [colG, setColG] = useState<Array<number>>([]);
+  const [colO, setColO] = useState<Array<number>>([]);
 
-  const [hideCardBtn, setHideCardBtn] = useState(false);
+  const [hideCardBtn, setHideCardBtn] = useState<boolean>(false);
 
   // =========== ビンゴカードを画面に出力する関数 ============
   const makeBingoCard = () => {

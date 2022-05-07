@@ -7,7 +7,7 @@ import { DataContext } from "./context/DataContext";
 import makeCardNumArray from "./makeCardNumArray/makeCardNumArray";
 
 // カードの番号を格納する配列(処理は別ファイルに記述)
-const cardNumArray = makeCardNumArray();
+const cardNumArray: Array<number> = makeCardNumArray();
 
 // 1〜75を持った長さ75の配列の作成
 const bingoBallArray: Array<number> = [];
@@ -25,9 +25,9 @@ function App() {
   // 何個目のボールか
   const [ballCount, setBallCount] = useState<number>(0);
   // 引いたボールの番号を表示
-  const [ballNumber, setBallNumber] = useState([]);
+  const [ballNumber, setBallNumber] = useState<Array<number>>([]);
   // ballNumbersArrayを配下のコンポーネントに送り出す
-  const [numbersArr, setNumbersArr] = useState([]);
+  const [numbersArr, setNumbersArr] = useState<Array<number>>([]);
 
   // ============= ビンゴボールの数字を作成する関数 ============
   const makeBingoBall = () => {
