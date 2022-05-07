@@ -1,0 +1,13 @@
+.ball-container {
+  width: 100%;
+}
+
+.ballCount {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.ballNum {
+  font-size: 30px;
+  font-weight: bold;
+}

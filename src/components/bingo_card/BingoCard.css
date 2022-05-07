@@ -1,0 +1,26 @@
+.card-container {
+  width: 100%;
+}
+
+.bingo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 60px;
+}
+.bingo > p {
+  font-weight: bold;
+}
+
+.cardNum-container {
+  display: flex;
+  justify-content: center;
+}
+.cardNum-container > div {
+  margin: 0 5px;
+}
+.cardNum-container > div > p {
+  padding: 5px;
+  margin: 5px;
+  line-height: 1.8;
+}
