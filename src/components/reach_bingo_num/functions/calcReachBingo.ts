@@ -4,20 +4,20 @@ import checkReach from "./checkReachNum";
 // B列、I列、N列、G列、O列の配列（縦列）
 const col_B: Array<number> = [];
 const col_I: Array<number> = [];
-const col_N: Array<number | string> = [];
+const col_N: Array<number> = [];
 const col_G: Array<number> = [];
 const col_O: Array<number> = [];
 
 // 横列
 const row_1: Array<number> = [];
 const row_2: Array<number> = [];
-const row_3: Array<number | string> = [];
+const row_3: Array<number> = [];
 const row_4: Array<number> = [];
 const row_5: Array<number> = [];
 
 // 斜め列
-const cross_1: Array<number | string> = [];
-const cross_2: Array<number | string> = [];
+const cross_1: Array<number> = [];
+const cross_2: Array<number> = [];
 
 // ============== 各列の値を取り出して、用意した配列に格納する関数 ==============
 export const makeLineArrays = (cardNumArray: Array<number>) => {
@@ -66,11 +66,11 @@ export const makeLineArrays = (cardNumArray: Array<number>) => {
     cross_2.push(cardNumArray[i]);
   }
 
-  // 中央は'free'に置換しておく
-  col_N[2] = "free";
-  row_3[2] = "free";
-  cross_1[2] = "free";
-  cross_2[2] = "free";
+  // 中央は数字の100に置換しておく　画面に出力するわけではない
+  col_N[2] = 100;
+  row_3[2] = 100;
+  cross_1[2] = 100;
+  cross_2[2] = 100;
 };
 
 // ============== 合計リーチ数・ビンゴ数を計算して、その数字を返す関数 ==============

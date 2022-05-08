@@ -1,7 +1,4 @@
-const checkReach = (
-  lineArr: Array<number | string>,
-  numbersArr: Array<number>
-) => {
+const checkReach = (lineArr: Array<number>, numbersArr: Array<number>) => {
   // ===== リーチ数をチェックする関数 =====
   let reachNum = 0;
   for (let i = 0; i < 5; i++) {
@@ -11,7 +8,7 @@ const checkReach = (
     }
   }
   // 'free'を含んでいたら＋1する
-  if (lineArr[2] === "free") {
+  if (lineArr[2] === 100) {
     reachNum += 1;
   }
   return reachNum === 4 ? 1 : 0;

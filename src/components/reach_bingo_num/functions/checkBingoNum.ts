@@ -1,7 +1,4 @@
-const checkBingo = (
-  lineArr: Array<number | string>,
-  numbersArr: Array<number>
-) => {
+const checkBingo = (lineArr: Array<number>, numbersArr: Array<number>) => {
   // ===== ビンゴ数をチェックする関数 =====
   let bingoNum = 0;
   for (let i = 0; i < 5; i++) {
@@ -11,7 +8,7 @@ const checkBingo = (
     }
   }
   // 'free'を含んでいたら＋1する
-  if (lineArr[2] === "free") {
+  if (lineArr[2] === 100) {
     bingoNum += 1;
   }
   return bingoNum === 5 ? 1 : 0;

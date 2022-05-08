@@ -20,9 +20,11 @@ const CardNum = ({ cardNum, numbersArr }: Props) => {
   if (numbersArr === undefined) numbersArr = [];
   return (
     <div>
-      {cardNum.map((num, i) => (
+      {cardNum.map((num: number | string, i) => (
         <p
-          style={num === "free" || numbersArr.includes(num) ? numStyle : null}
+          style={
+            num === "free" || numbersArr.includes(num) ? numStyle : undefined
+          }
           key={i}
         >
           {num}

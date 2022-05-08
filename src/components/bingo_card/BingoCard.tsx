@@ -5,7 +5,7 @@ import CardNum from "./card_number/CardNum";
 
 type Props = {
   cardNumArray: Array<number>;
-  numbersArr: Array<number | string>;
+  numbersArr: Array<number>;
 };
 
 // B列、I列、N列、G列、O列の配列（縦列）
@@ -76,7 +76,7 @@ const BingoCard = ({ cardNumArray, numbersArr }: Props) => {
       </div>
       <br />
       <button
-        style={hideCardBtn ? { display: "none" } : null}
+        style={hideCardBtn ? { display: "none" } : undefined}
         onClick={() => {
           setHideCardBtn(!hideCardBtn);
           // ボールを引くボタンを表示する

@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const DataContext = createContext();
 
-export const DataProvider = ({ children }) => {
+export const DataProvider = ({ children }: any) => {
   //ボールボタンの表示非表示
   const [showBingoBallBtn, setShowBingoBallBtn] = useState<boolean>(false);
 

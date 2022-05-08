@@ -21,6 +21,7 @@ const ballNumbersArray: Array<number> = [];
 // ===============================================================
 function App() {
   const data = useContext(DataContext);
+  console.log(data);
 
   // 何個目のボールか
   const [ballCount, setBallCount] = useState<number>(0);
@@ -70,7 +71,7 @@ function App() {
 
       <div>
         <button
-          style={data.showBingoBallBtn ? null : { display: "none" }}
+          style={data.showBingoBallBtn ? undefined : { display: "none" }}
           onClick={() => {
             setBallCount(ballCount + 1);
             makeBingoBall();
