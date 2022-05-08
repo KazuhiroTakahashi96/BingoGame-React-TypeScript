@@ -3,6 +3,11 @@ import { DataContext } from "../../context/DataContext";
 import "./BingoCard.css";
 import CardNum from "./card_number/CardNum";
 
+type Props = {
+  cardNumArray: Array<number>;
+  numbersArr: Array<number | string>;
+};
+
 // B列、I列、N列、G列、O列の配列（縦列）
 const col_B: Array<number> = [];
 const col_I: Array<number> = [];
@@ -10,7 +15,7 @@ const col_N: Array<number | string> = [];
 const col_G: Array<number> = [];
 const col_O: Array<number> = [];
 
-const BingoCard = ({ cardNumArray, numbersArr }) => {
+const BingoCard = ({ cardNumArray, numbersArr }: Props) => {
   const data = useContext(DataContext);
 
   const [colB, setColB] = useState<Array<number>>([]);

@@ -1,11 +1,21 @@
 import React from "react";
 
-const numStyle = {
+type Props = {
+  cardNum: Array<number | string>;
+  numbersArr: Array<number>;
+};
+
+type Style = {
+  backgroundColor: string;
+  borderRadius: string;
+};
+
+const numStyle: Style = {
   backgroundColor: "gold",
   borderRadius: "20px 20px 0 0",
 };
 
-const CardNum = ({ cardNum, numbersArr }) => {
+const CardNum = ({ cardNum, numbersArr }: Props) => {
   // undefinedだった場合、空の配列を返す。でないと、includes()の所でエラーになる
   if (numbersArr === undefined) numbersArr = [];
   return (

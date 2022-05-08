@@ -1,9 +1,9 @@
 // ビンゴカードの番号を格納する配列
-const cardNumArray = [];
+const cardNumArray: Array<number> = [];
 
 const makeCardNumArray = () => {
   // =========== ビンゴカードの数字を作成する関数 ===========
-  const makeRandomNum = (plus) => {
+  const makeRandomNum = (plus: number) => {
     // 1〜15の数字が入った、長さ15の配列を作成
     const baseNum = [];
     for (let i = 1; i <= 15; i++) {

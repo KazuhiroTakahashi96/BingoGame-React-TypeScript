@@ -2,25 +2,25 @@ import checkBingo from "./checkBingoNum";
 import checkReach from "./checkReachNum";
 
 // B列、I列、N列、G列、O列の配列（縦列）
-const col_B = [];
-const col_I = [];
-const col_N = [];
-const col_G = [];
-const col_O = [];
+const col_B: Array<number> = [];
+const col_I: Array<number> = [];
+const col_N: Array<number | string> = [];
+const col_G: Array<number> = [];
+const col_O: Array<number> = [];
 
 // 横列
-const row_1 = [];
-const row_2 = [];
-const row_3 = [];
-const row_4 = [];
-const row_5 = [];
+const row_1: Array<number> = [];
+const row_2: Array<number> = [];
+const row_3: Array<number | string> = [];
+const row_4: Array<number> = [];
+const row_5: Array<number> = [];
 
 // 斜め列
-const cross_1 = [];
-const cross_2 = [];
+const cross_1: Array<number | string> = [];
+const cross_2: Array<number | string> = [];
 
 // ============== 各列の値を取り出して、用意した配列に格納する関数 ==============
-export const makeLineArrays = (cardNumArray) => {
+export const makeLineArrays = (cardNumArray: Array<number>) => {
   // 縦列の数字を、用意した配列に格納
   for (let i = 0; i < 25; i++) {
     // iが5未満なら
@@ -74,7 +74,7 @@ export const makeLineArrays = (cardNumArray) => {
 };
 
 // ============== 合計リーチ数・ビンゴ数を計算して、その数字を返す関数 ==============
-export const calcTotalReachNum = (numbersArr) => {
+export const calcTotalReachNum = (numbersArr: Array<number>) => {
   const totalReachNumber =
     checkReach(col_B, numbersArr) +
     checkReach(col_I, numbersArr) +
@@ -91,7 +91,7 @@ export const calcTotalReachNum = (numbersArr) => {
   return totalReachNumber;
 };
 
-export const calcTotalBingoNum = (numbersArr) => {
+export const calcTotalBingoNum = (numbersArr: Array<number>) => {
   const totalBingoNumber =
     checkBingo(col_B, numbersArr) +
     checkBingo(col_I, numbersArr) +

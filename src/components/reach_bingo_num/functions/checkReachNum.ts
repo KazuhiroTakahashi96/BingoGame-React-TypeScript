@@ -1,4 +1,7 @@
-const checkReach = (lineArr, numbersArr) => {
+const checkReach = (
+  lineArr: Array<number | string>,
+  numbersArr: Array<number>
+) => {
   // ===== リーチ数をチェックする関数 =====
   let reachNum = 0;
   for (let i = 0; i < 5; i++) {

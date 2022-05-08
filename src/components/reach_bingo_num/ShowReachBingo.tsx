@@ -5,12 +5,17 @@ import {
   makeLineArrays,
 } from "./functions/calcReachBingo";
 
+type Props = {
+  cardNumArray: Array<number>;
+  numbersArr: Array<number>;
+};
+
 const reachBingoNumStyle = {
   fontSize: "30px",
   fontWeight: "bold",
 };
 
-const ShowReachBingo = ({ cardNumArray, numbersArr }) => {
+const ShowReachBingo = ({ cardNumArray, numbersArr }: Props) => {
   // リーチ数とビンゴ数を表示する
   const [reachNumber, setReachNumber] = useState(0);
   const [bingoNumber, setBingoNumber] = useState(0);

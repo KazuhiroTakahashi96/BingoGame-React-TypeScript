@@ -1,4 +1,7 @@
-const checkBingo = (lineArr, numbersArr) => {
+const checkBingo = (
+  lineArr: Array<number | string>,
+  numbersArr: Array<number>
+) => {
   // ===== ビンゴ数をチェックする関数 =====
   let bingoNum = 0;
   for (let i = 0; i < 5; i++) {

@@ -25,7 +25,7 @@ function App() {
   // 何個目のボールか
   const [ballCount, setBallCount] = useState<number>(0);
   // 引いたボールの番号を表示
-  const [ballNumber, setBallNumber] = useState<Array<number>>([]);
+  const [ballNumber, setBallNumber] = useState<number>(0);
   // ballNumbersArrayを配下のコンポーネントに送り出す
   const [numbersArr, setNumbersArr] = useState<Array<number>>([]);
 

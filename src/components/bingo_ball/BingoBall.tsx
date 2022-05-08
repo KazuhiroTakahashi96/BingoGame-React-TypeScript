@@ -1,7 +1,12 @@
 import React from "react";
 import "./BingoBall.css";
 
-const BingoBall = ({ ballCount, ballNumber }) => {
+type Props = {
+  ballCount: number;
+  ballNumber: number;
+};
+
+const BingoBall = ({ ballCount, ballNumber }: Props) => {
   return (
     <div className="ball-container">
       <div>
