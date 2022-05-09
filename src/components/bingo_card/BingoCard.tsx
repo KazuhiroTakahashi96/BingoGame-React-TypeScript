@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
-import { DataContext } from "../../context/DataContext";
+import React, { useState } from "react";
 import "./BingoCard.css";
 import CardNum from "./card_number/CardNum";
 
 type Props = {
   cardNumArray: Array<number>;
   numbersArr: Array<number>;
+  handleClickBtn: any;
 };
 
 // B列、I列、N列、G列、O列の配列（縦列）
@@ -15,9 +15,7 @@ const col_N: Array<number | string> = [];
 const col_G: Array<number> = [];
 const col_O: Array<number> = [];
 
-const BingoCard = ({ cardNumArray, numbersArr }: Props) => {
-  const data = useContext(DataContext);
-
+const BingoCard = ({ cardNumArray, numbersArr, handleClickBtn }: Props) => {
   const [colB, setColB] = useState<Array<number>>([]);
   const [colI, setColI] = useState<Array<number>>([]);
   const [colN, setColN] = useState<Array<number | string>>([]);
@@ -79,9 +77,8 @@ const BingoCard = ({ cardNumArray, numbersArr }: Props) => {
         style={hideCardBtn ? { display: "none" } : undefined}
         onClick={() => {
           setHideCardBtn(!hideCardBtn);
-          // ボールを引くボタンを表示する
-          data.setShowBingoBallBtn(!data.showBingoBallBtn);
           makeBingoCard();
+          handleClickBtn();
         }}
       >
         カード作成

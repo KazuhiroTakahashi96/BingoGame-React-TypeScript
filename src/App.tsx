@@ -1,9 +1,8 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import BingoBall from "./components/bingo_ball/BingoBall";
 import BingoCard from "./components/bingo_card/BingoCard";
 import ShowReachBingo from "./components/reach_bingo_num/ShowReachBingo";
-import { DataContext } from "./context/DataContext";
 import makeCardNumArray from "./makeCardNumArray/makeCardNumArray";
 
 // カードの番号を格納する配列(処理は別ファイルに記述)
@@ -20,15 +19,19 @@ const ballNumbersArray: Array<number> = [];
 
 // ===============================================================
 function App() {
-  const data = useContext(DataContext);
-  console.log(data);
-
   // 何個目のボールか
   const [ballCount, setBallCount] = useState<number>(0);
   // 引いたボールの番号を表示
   const [ballNumber, setBallNumber] = useState<number>(0);
   // ballNumbersArrayを配下のコンポーネントに送り出す
   const [numbersArr, setNumbersArr] = useState<Array<number>>([]);
+  // ボタンの表示非表示の操作用
+  const [showHideBtn, setShowHideBtn] = useState<boolean>(false);
+
+  // 参考記事 https://qiita.com/y4u0t2a1r0/items/b2688af4762b114f0efc
+  const handleClickBtn = () => {
+    setShowHideBtn(!showHideBtn);
+  };
 
   // ============= ビンゴボールの数字を作成する関数 ============
   const makeBingoBall = () => {
@@ -46,7 +49,7 @@ function App() {
     if (bingoBallArray.length === 0) {
       setBallNumber(ballNumbersArray[0]);
       // ボタンを消す
-      data.setShowBingoBallBtn(!data.showBingoBallBtn);
+      setShowHideBtn(!showHideBtn);
     } else {
       setBallNumber(ballNumbersArray[0]);
     }
@@ -62,7 +65,11 @@ function App() {
       <div className="container">
         {/* [cardNumArray] は、ビンゴカード上の数字が入った配列 */}
         {/* [numbersArr] は、引いたボールの数字が入った配列 */}
-        <BingoCard cardNumArray={cardNumArray} numbersArr={numbersArr} />
+        <BingoCard
+          cardNumArray={cardNumArray}
+          numbersArr={numbersArr}
+          handleClickBtn={handleClickBtn}
+        />
         <ShowReachBingo cardNumArray={cardNumArray} numbersArr={numbersArr} />
         {/* [ballCount] は、n個目のボールかの数字 */}
         {/* [ballNumber] は、引いたボールの数字 */}
@@ -71,7 +78,7 @@ function App() {
 
       <div>
         <button
-          style={data.showBingoBallBtn ? undefined : { display: "none" }}
+          style={showHideBtn ? undefined : { display: "none" }}
           onClick={() => {
             setBallCount(ballCount + 1);
             makeBingoBall();

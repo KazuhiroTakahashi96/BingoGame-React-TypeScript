@@ -16,11 +16,21 @@ const numStyle: Style = {
 };
 
 const CardNum = ({ cardNum, numbersArr }: Props) => {
-  // undefinedだった場合、空の配列を返す。でないと、includes()の所でエラーになる
-  if (numbersArr === undefined) numbersArr = [];
+  // const func = (num: number):boolean => {
+  //   if (typeof num === "number") {
+  //     if (numbersArr.includes(num)) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   } else {
+  //     return false;
+  //   }
+  // };
+
   return (
     <div>
-      {cardNum.map((num: number | string, i) => (
+      {cardNum.map((num, i) => (
         <p
           style={
             num === "free" || numbersArr.includes(num) ? numStyle : undefined
